@@ -94,6 +94,14 @@ header h2 {
   width: 940px;
   margin: 0 auto;
 }
+#logo {
+	width: 128px;
+	height: 128px;
+	float: left;
+	top: 0px;
+	left: 412px;
+	position: absolute;
+}
 
 #content-wrapper {
   border-top: solid 1px #fff;
