@@ -1,32 +1,188 @@
-
-<!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="utf-8" />
-    <title>Terminal.FM</title>
-    <meta name="author" content="AKFish"/>
-    <meta name="Description" content="Terminal like music player."/>
-    <script src="init.js"></script>
-    <script src="jquery.terminal/js/jquery-1.7.1.min.js"></script>
-    <script src="jquery.terminal/js/jquery.mousewheel-min.js"></script>
-    <script src="jquery.terminal/js/jquery.terminal-min.js"></script>
-    <link href="jquery.terminal/css/jquery.terminal.css" rel="stylesheet"/>
-    <script src="jquery-jsonp/src/jquery.jsonp.js"></script>    
-    <script src="jquery-cookie/jquery.cookie.js"></script>
-    <script src="jquery-base64/jquery.base64.js"></script>
-    <script src="SoundManager2/script/soundmanager2.js"></script>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
-    <script src="scripts/JSONPService.js"></script>
-    <script src="scripts/terminal.js"></script>
-    <script src="scripts/Douban.js"></script>
-    <script src="scripts/command.login.js"></script>
-    <script src="scripts/command.logout.js"></script>
-    <script src="scripts/command.channel.js"></script>
-    <script src="scripts/command.play.js"></script>
-    <script src="scripts/command.playcontrol.js"></script>
-    <script src="scripts/command.next.js"></script>
-    <script>
-    </script>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>FM Terminal by akfish</title>
   </head>
-  <body style="width: 600px; height: 400px">
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>FM Terminal</h1>
+        <h2>命令行风格豆瓣电台Chrome插件</h2>
+        <a href="https://github.com/akfish/fm-terminal" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="fm-terminal" class="anchor" href="#fm-terminal"><span class="octicon octicon-link"></span></a>FM Terminal</h1>
+
+<p>命令行风格豆瓣电台Chrome插件。</p>
+
+<p>Geek风，无广告。</p>
+
+<h2>
+<a name="v10-%E5%8A%9F%E8%83%BD-" class="anchor" href="#v10-%E5%8A%9F%E8%83%BD-"><span class="octicon octicon-link"></span></a>v1.0 功能 </h2>
+
+<ul>
+<li>播放豆瓣电台音乐，登陆、红心、不再播放</li>
+<li>Chrome开发者工具、Popup终端</li>
+<li>屏蔽广告</li>
+</ul><h2>
+<a name="%E5%AE%89%E8%A3%85" class="anchor" href="#%E5%AE%89%E8%A3%85"><span class="octicon octicon-link"></span></a>安装</h2>
+
+<ol>
+<li>下载插件<a href="http://fm.catx.me/chrome/fm-terminal.crx">fm-terminal</a>
+</li>
+<li>打开<a>Chrome插件设置页面</a>
+</li>
+<li>拖放下载的文件到插件设置页面中</li>
+<li>确定安装</li>
+</ol><h2>
+<a name="%E4%BD%BF%E7%94%A8" class="anchor" href="#%E4%BD%BF%E7%94%A8"><span class="octicon octicon-link"></span></a>使用</h2>
+
+<ol>
+<li>点击<strong>Douban.fm CMD</strong>图标（默认快捷键Alt+M），或，打开<strong>开发者工具</strong>（快捷键F12）-&gt;切换到<strong>CatX.FM</strong>页</li>
+<li>输入命令，回车</li>
+</ol><p>支持的命令：</p>
+
+<table>
+<thead><tr>
+<th>命令</th>
+<th>参数</th>
+<th>描述</th>
+<th>示例</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>help</td>
+<td>无</td>
+<td>显示命令列表</td>
+<td>懒得举例了</td>
+</tr>
+<tr>
+<td>login</td>
+<td>无</td>
+<td>登陆豆瓣电台。根据提示输入email地址、密码以及是否记住登陆</td>
+<td>懒得举例了</td>
+</tr>
+<tr>
+<td>logout</td>
+<td>无</td>
+<td>登出豆瓣电台</td>
+<td>懒得举例了</td>
+</tr>
+<tr>
+<td>channel</td>
+<td>无</td>
+<td>显示频道列表</td>
+<td>懒得举例了</td>
+</tr>
+<tr>
+<td>play</td>
+<td>频道编号</td>
+<td>播放指定编号的频道</td>
+<td>play 0</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>无</td>
+<td>停止播放</td>
+<td>懒得举例了</td>
+</tr>
+<tr>
+<td>pause</td>
+<td>无</td>
+<td>暂停播放</td>
+<td>懒得举例了</td>
+</tr>
+<tr>
+<td>resume</td>
+<td>无</td>
+<td>恢复播放</td>
+<td>懒得举例了</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>无</td>
+<td>单曲循环</td>
+<td>懒得举例了</td>
+</tr>
+<tr>
+<td>next</td>
+<td>无</td>
+<td>下一首</td>
+<td>懒得举例了</td>
+</tr>
+<tr>
+<td>prev</td>
+<td>无</td>
+<td>上一首</td>
+<td>懒得举例了</td>
+</tr>
+<tr>
+<td>boo</td>
+<td>无</td>
+<td>不再播放（需要登陆）</td>
+<td>懒得举例了</td>
+</tr>
+<tr>
+<td>like</td>
+<td>无</td>
+<td>加红心（需要登陆）</td>
+<td>懒得举例了</td>
+</tr>
+<tr>
+<td>unlike</td>
+<td>无</td>
+<td>去掉红心（需要登陆）</td>
+<td>懒得举例了</td>
+</tr>
+</tbody>
+</table>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/akfish/fm-terminal/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/akfish/fm-terminal/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/akfish/fm-terminal"></a> is maintained by <a href="https://github.com/akfish">akfish</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-44221459-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
+</html>
