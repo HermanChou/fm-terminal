@@ -4,3 +4,8 @@ eproject.cfg
 *.bat
 *.pyc
 *_flymake.*
+jquery-base64/
+jquery-cookie/
+jquery-jsonp/
+jquery.terminal/
+SoundManager2/
