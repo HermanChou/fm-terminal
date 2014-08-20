@@ -121,7 +121,7 @@ Not necessary.
 #### Get Songs
 
 ##### Request
-```GET /j/app/radio/people```
+```POST /j/app/radio/people```
 
 ##### Parameters
 
@@ -293,8 +293,8 @@ Unescaped:
 
 >|:e|:e|:e|:e|:e|da60984_84:s|1385975:r|:e|157218:u|157218:r
 
-It is very clear what these mean. The values are apparently sequences of use behavior seperated by ```|```.
-Each node consits of ```song id```(ommited when the song is played though the end) and ```user behiviour``` (corresponding to ```type``` field), seperated with ```:```.
+It is very clear what these mean. The values are apparently sequences of user's behaviors seperated by ```|```.
+Each node consits of ```song id```(omitted when the song is played through the end) and ```user behiviour``` (corresponding to ```type``` field), seperated with ```:```.
 Their lengths are variable and the max length is unknown (too lazy to do more experiments).
 
-When a song is normally played though the end, this field is omitted. Apprently they found it boring when you listened to every song they through at you.
+When a song is normally played through the end, this field is omitted. Apprently they found it boring when you listened to every song they throw at you.
